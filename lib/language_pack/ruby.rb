@@ -750,9 +750,10 @@ params = CGI.parse(uri.query || "")
 
       # fix for https://github.com/sparklemotion/nokogiri/issues/923
       if @metadata.exists?(buildpack_version_cache) && @metadata.read(buildpack_version_cache).sub('v', '').to_i <= 76
-        puts "Fixing nokogiri install. Clearing bundler cache."
-        puts "See https://github.com/sparklemotion/nokogiri/issues/923."
-        purge_bundler_cache
+        #puts "Fixing nokogiri install. Clearing bundler cache."
+        #puts "See https://github.com/sparklemotion/nokogiri/issues/923."
+        #purge_bundler_cache
+        puts "Not clearing the cache, though normally I would here."
       end
 
       FileUtils.mkdir_p(heroku_metadata)
